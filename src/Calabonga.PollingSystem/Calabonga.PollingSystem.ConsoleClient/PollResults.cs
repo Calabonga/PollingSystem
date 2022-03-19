@@ -1,6 +1,8 @@
 ﻿using System.Text;
 using Calabonga.PollingSystem.Entities;
 
+namespace Calabonga.PollingSystem.ConsoleClient;
+
 public class PollResults
 {
     private readonly Poll _poll;
