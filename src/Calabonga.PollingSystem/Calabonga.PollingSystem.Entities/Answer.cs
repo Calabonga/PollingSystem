@@ -1,23 +1,22 @@
 ﻿using System.Diagnostics;
+using Calabonga.PollingSystem.Entities.Base;
 
 namespace Calabonga.PollingSystem.Entities;
 
 [DebuggerDisplay("{Title} {Votes} {Percents}")]
-public class PollAnswer
+public class Answer: Identity
 {
-    public PollAnswer(int id, string title)
+    public Answer(Guid id, string title)
     {
         Id = id;
         Title = title;
     }
-
-    public int Id { get; }
-
+    
     public string Title { get; }
 
     public int Votes { get; set; }
 
-    public double Percents { get; set; }
+    public double Percents { get; private set; }
 
     public void SetPercents(int totalVotes)
     {
@@ -29,6 +28,6 @@ public class PollAnswer
 
     public override string ToString()
     {
-        return $"* {Title} ({Votes} {Percents:F})";
+        return $"* {Title} - {Votes} ({Percents:F}%)";
     }
 }

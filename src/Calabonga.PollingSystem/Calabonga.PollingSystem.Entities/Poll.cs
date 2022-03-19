@@ -1,11 +1,12 @@
 ﻿using System.Diagnostics;
+using Calabonga.PollingSystem.Entities.Base;
 
 namespace Calabonga.PollingSystem.Entities
 {
     [DebuggerDisplay("{QuestionText}")]
-    public class Poll
+    public class Poll : Identity
     {
-        public Poll(string questionText, List<PollAnswer> answers)
+        public Poll(string questionText, List<Answer> answers)
         {
             QuestionText = questionText;
             Answers = answers;
@@ -13,14 +14,14 @@ namespace Calabonga.PollingSystem.Entities
 
         public string QuestionText { get; }
 
-        public List<PollAnswer>? Answers { get; }
+        public List<Answer>? Answers { get; }
 
         /// <summary>
         /// Make a vote
         /// </summary>
         /// <param name="id"></param>
         /// <param name="value"></param>
-        public void VoteTo(int id, int value = 1)
+        public void VoteTo(Guid id, int value = 1)
         {
             var item = Answers?.SingleOrDefault(x => x.Id == id);
             if (item == null)

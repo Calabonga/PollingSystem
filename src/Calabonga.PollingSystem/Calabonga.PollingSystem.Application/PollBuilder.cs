@@ -1,20 +1,24 @@
 ﻿using Calabonga.PollingSystem.Entities;
 
-namespace Calabonga.PollingSystem.ConsoleClient;
-
 public class PollBuilder
 {
     private readonly string _questionText;
-    private readonly List<PollAnswer> _items = new();
-
+    private readonly List<Answer> _items = new();
+    
     public PollBuilder(string questionText)
     {
         _questionText = questionText;
     }
 
-    public PollBuilder AddAnswer(int id, string title)
+    public PollBuilder AddAnswer(Guid id, string title)
     {
-        _items.Add(new PollAnswer(id, title));
+        var item = _items.FirstOrDefault(x => x.Id == id);
+        if (item is { })
+        {
+            return this;
+        }
+
+        _items.Add(new Answer(id, title));
         return this;
     }
 

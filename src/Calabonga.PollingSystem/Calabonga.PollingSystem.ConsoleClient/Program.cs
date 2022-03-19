@@ -1,25 +1,23 @@
-﻿
-using Calabonga.PollingSystem.ConsoleClient;
-
-var builder = new PollBuilder("Как вам это видео?")
-    .AddAnswer(1, "Нормально")
-    .AddAnswer(2, "Не плохо")
-    .AddAnswer(3, "Отстой")
-    .AddAnswer(4, "Супер");
+﻿var builder = new PollBuilder("Как вам это видео?")
+    .AddAnswer(Guid.Parse("51611623-e72f-0488-4011-be4f13c8e936"), "Нормально")
+    .AddAnswer(Guid.Parse("b253b82c-90a1-2183-4053-48f910a49247"), "Не плохо")
+    .AddAnswer(Guid.Parse("50f0b6ee-ba6e-f988-4f3b-79c85308ed25"), "Отстой")
+    .AddAnswer(Guid.Parse("9ebb2234-75cb-eeb2-4fed-1774318d9ce8"), "Супер")
+    .AddAnswer(Guid.Parse("51611623-e72f-0488-4011-be4f13c8e936"), "Очень круто");
 
 var poll = builder.Build();
 
-poll.VoteTo(3);
-
-poll.VoteTo(3);
-poll.VoteTo(2);
-poll.VoteTo(1);
-poll.VoteTo(4);
-poll.VoteTo(4);
-poll.VoteTo(4);
-poll.VoteTo(4);
-poll.VoteTo(4);
-poll.VoteTo(4, 10);
+poll.VoteTo(Guid.Parse("50f0b6ee-ba6e-f988-4f3b-79c85308ed25"));
+poll.VoteTo(Guid.Parse("50f0b6ee-ba6e-f988-4f3b-79c85308ed25"));
+poll.VoteTo(Guid.Parse("b253b82c-90a1-2183-4053-48f910a49247"));
+poll.VoteTo(Guid.Parse("b253b82c-90a1-2183-4053-48f910a49247"));
+poll.VoteTo(Guid.Parse("51611623-e72f-0488-4011-be4f13c8e936"));
+poll.VoteTo(Guid.Parse("51611623-e72f-0488-4011-be4f13c8e936"));
+poll.VoteTo(Guid.Parse("b253b82c-90a1-2183-4053-48f910a49247"));
+poll.VoteTo(Guid.Parse("9ebb2234-75cb-eeb2-4fed-1774318d9ce8"));
+poll.VoteTo(Guid.Parse("9ebb2234-75cb-eeb2-4fed-1774318d9ce8"));
+poll.VoteTo(Guid.Parse("9ebb2234-75cb-eeb2-4fed-1774318d9ce8"));
+poll.VoteTo(Guid.Parse("9ebb2234-75cb-eeb2-4fed-1774318d9ce8"), 10);
 
 
 var result = builder.GetResults(poll);
