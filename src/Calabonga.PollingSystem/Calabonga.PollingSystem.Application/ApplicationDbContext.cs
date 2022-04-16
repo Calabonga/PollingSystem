@@ -1,16 +1,16 @@
-﻿using Calabonga.PollingSystem.Entities;
+﻿#nullable disable
+
+using Calabonga.PollingSystem.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace Calabonga.PollingSystem.Application
+namespace Calabonga.PollingSystem.Application;
+
+public class ApplicationDbContext: DbContext
 {
-    #nullable disable
+    public DbSet<Poll> Polls { get; set; }
 
-    public class ApplicationDbContext: DbContext
-    {
-        public DbSet<Poll> Polls { get; set; }
+    public DbSet<Answer> Answers { get; set; }
 
-        public DbSet<Answer> Answers { get; set; }
-    }
-
-    #nullable enable
 }
+
+#nullable enable
