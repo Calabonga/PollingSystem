@@ -1,0 +1,19 @@
+﻿@page
+@model LogoutModel
+@{
+    ViewBag.Title = "Выход";
+}
+
+<h1>@ViewData["Title"]</h1>
+@{
+    if (User.Identity!.IsAuthenticated)
+    {
+        <form asp-area="" asp-page="/Admin/Logout" asp-route-returnUrl="@Url.Page("/", new { area = "" })" method="post">
+            <button type="submit" class="btn btn-outline-secondary">Выход</button>
+        </form>
+    }
+    else
+    {
+        <p>You have successfully logged out of the application.</p>
+    }
+}

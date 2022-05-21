@@ -4,7 +4,12 @@
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>ccf1aa2f-cb3d-4d46-9e87-cce38e49eaf3</UserSecretsId>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="Pages\Admin\Login.cshtml" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.4">

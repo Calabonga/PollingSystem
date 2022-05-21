@@ -1,0 +1,20 @@
+﻿@page
+@model IndexModel
+@{
+    ViewBag.Title = "Панель управления";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div class="row">
+    <div class="col-md-6 mb-3">
+        <a class="btn btn-secondary" asp-page="/Polls/Create">Создать новое голосование</a>
+        <a class="btn btn-secondary" asp-page="/Answers/Create">Добавить ответы для голосования</a>
+    </div>
+    <div class="col-md-6"></div>
+</div>
+
+
+
+
+<a class="btn btn-outline-secondary" asp-page="/Admin/Logout">Выход</a>

@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calabonga.PollingSystem.Con
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calabonga.PollingSystem.Application", "Calabonga.PollingSystem.Application\Calabonga.PollingSystem.Application.csproj", "{CF11B841-268C-4F3E-800F-B4167334671F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calabonga.PollingSystem.Web", "Calabonga.PollingSystem.Web\Calabonga.PollingSystem.Web.csproj", "{8156B4B9-475C-4951-B029-C676FCC1B524}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calabonga.PollingSystem.Web", "Calabonga.PollingSystem.Web\Calabonga.PollingSystem.Web.csproj", "{8156B4B9-475C-4951-B029-C676FCC1B524}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
