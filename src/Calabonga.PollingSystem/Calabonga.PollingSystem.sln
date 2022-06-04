@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calabonga.PollingSystem.App
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calabonga.PollingSystem.Web", "Calabonga.PollingSystem.Web\Calabonga.PollingSystem.Web.csproj", "{8156B4B9-475C-4951-B029-C676FCC1B524}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calabonga.PollingSystem.BlazorLib", "Calabonga.PollingSystem.BlazorLib\Calabonga.PollingSystem.BlazorLib.csproj", "{1BD3999E-F85F-4DC9-9F3F-145C3C416AA7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{8156B4B9-475C-4951-B029-C676FCC1B524}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8156B4B9-475C-4951-B029-C676FCC1B524}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8156B4B9-475C-4951-B029-C676FCC1B524}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BD3999E-F85F-4DC9-9F3F-145C3C416AA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BD3999E-F85F-4DC9-9F3F-145C3C416AA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BD3999E-F85F-4DC9-9F3F-145C3C416AA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BD3999E-F85F-4DC9-9F3F-145C3C416AA7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

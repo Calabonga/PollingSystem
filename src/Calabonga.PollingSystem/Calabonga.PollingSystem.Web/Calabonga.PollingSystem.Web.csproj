@@ -20,6 +20,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Calabonga.PollingSystem.Application\Calabonga.PollingSystem.Application.csproj" />
+    <ProjectReference Include="..\Calabonga.PollingSystem.BlazorLib\Calabonga.PollingSystem.BlazorLib.csproj" />
   </ItemGroup>
 
 </Project>

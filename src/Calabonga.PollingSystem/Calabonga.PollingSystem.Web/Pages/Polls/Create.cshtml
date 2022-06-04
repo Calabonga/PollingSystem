@@ -1,0 +1,16 @@
+﻿@page
+@using Calabonga.PollingSystem.BlazorLib
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model CreateModel
+@{
+    ViewBag.Title = "Создание нового голосования";
+}
+<h1>@ViewData["Title"]</h1>
+
+
+<component type="typeof(Component1)" render-mode="ServerPrerendered"/>
+
+@section Scripts
+{
+    <script src="_framework/blazor.server.js"></script>
+}
