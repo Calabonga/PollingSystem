@@ -31,7 +31,5 @@ public class CommonDefinition: AppDefinition
 
         app.MapRazorPages();
 
-        app.Run();
-
     }
 }

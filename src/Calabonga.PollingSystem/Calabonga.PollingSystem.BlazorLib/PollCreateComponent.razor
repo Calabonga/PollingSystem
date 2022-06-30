@@ -1,0 +1,58 @@
+﻿@inherits PollCreateModel
+
+<div class="col">
+
+    <h3>Создание голосования</h3>
+
+    <div class="mb-3">
+        <label for="PollText" class="form-label">Тема для голосования</label>
+        <input type="text" class="form-control" id="PollText" @bind="QuestionText" @bind:event="oninput">
+        <div id="PollTextHelp" class="form-text">допускается текст длиной не более 512 символов</div>
+    </div>
+
+    <div class="mb-3">
+        <button class="btn btn-outline-info" @onclick="AddAnswer">
+            Добавить ответ
+        </button>
+    </div>
+
+    @foreach (var answer in Answers)
+    {
+        <div class="mb-3 input-group">
+            <input type="text" class="form-control" id="AnswerText1" @bind="answer.Text" @bind:event="oninput">
+            <button class="btn btn-outline-danger" type="button" @onclick="() => DeleteAnswer(answer)" >x</button>
+        </div>
+    }
+
+</div>
+<div class="col">
+    <h3>Предварительный просмотр</h3>
+    <p class="lead">@QuestionText</p>
+    <ul>
+        @foreach (var answer in Answers)
+        {
+            <li>@answer.Text</li>
+        }
+    </ul>
+</div>
+<div class="row">
+    <div class="col">
+        <ul>
+            @if (Errors.Any())
+            {
+                foreach (var error in Errors)
+                {
+                    <li class="text-danger">@error</li>
+                }
+            }
+        </ul>
+    </div>
+</div>
+<div class="mb-3">
+    <button class="btn btn-outline-primary" @onclick="SaveAnswer">
+        Сохранить
+    </button>
+    <button class="btn btn-outline-secondary" @onclick="Validate">
+        Проверить
+    </button>
+</div>

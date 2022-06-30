@@ -5,12 +5,16 @@
 @{
     ViewBag.Title = "Создание нового голосования";
 }
-<h1>@ViewData["Title"]</h1>
 
 
-<component type="typeof(Component1)" render-mode="ServerPrerendered"/>
+<div class="row">
+
+<component type="typeof(PollCreateComponent)" render-mode="ServerPrerendered" />
+
+</div>
+
 
 @section Scripts
-{
+    {
     <script src="_framework/blazor.server.js"></script>
 }
