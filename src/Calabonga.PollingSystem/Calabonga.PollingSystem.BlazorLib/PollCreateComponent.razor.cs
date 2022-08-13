@@ -1,12 +1,17 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using Calabonga.OperationResults;
+using Calabonga.PollingSystem.Contracts;
 using Microsoft.AspNetCore.Components;
-using Microsoft.Extensions.Options;
 
 namespace Calabonga.PollingSystem.BlazorLib
 {
     public class PollCreateModel : ComponentBase
     {
+        [Inject] protected IPollService PollService { get; set; } = null!;
+        
         public List<string> Errors { get; } = new();
+
+        public OperationResult<SaveResult>? Result { get; set; }
 
         public string? QuestionText { get; set; } = "Какая сегодня погода, на ваш взгляд?";
 
@@ -49,17 +54,26 @@ namespace Calabonga.PollingSystem.BlazorLib
             }
         }
 
-        protected Task SaveAnswer()
+        protected async Task SaveAnswer()
         {
             Validate();
             if (Errors.Any())
             {
-                return Task.CompletedTask;
+                return;
             }
-            
-            // save to DB
 
-            return Task.CompletedTask;
+            var cancellationTokenSource = new CancellationTokenSource();
+            cancellationTokenSource.CancelAfter(5000);
+
+            // save to DB
+            Result = await PollService.SaveAsync(QuestionText!, Answers.Select(x=>x.Text).ToList()!, cancellationTokenSource.Token);
+            if (Result.Ok)
+            {
+                // Ok, save and redirect another page
+                QuestionText = null;
+                Errors.Clear();
+                Answers.Clear();
+            }
         }
 
         private IEnumerable<ValidationResult> ValidatePoll()

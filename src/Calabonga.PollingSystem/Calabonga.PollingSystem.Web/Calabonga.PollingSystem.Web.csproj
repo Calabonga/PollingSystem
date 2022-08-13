@@ -12,15 +12,18 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Calabonga.UnitOfWork" Version="3.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.4">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="OperationResultCore" Version="3.0.1" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Calabonga.PollingSystem.Application\Calabonga.PollingSystem.Application.csproj" />
     <ProjectReference Include="..\Calabonga.PollingSystem.BlazorLib\Calabonga.PollingSystem.BlazorLib.csproj" />
+    <ProjectReference Include="..\Calabonga.PollingSystem.Contracts\Calabonga.PollingSystem.Contracts.csproj" />
   </ItemGroup>
 
 </Project>

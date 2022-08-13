@@ -20,7 +20,7 @@ namespace Calabonga.PollingSystem.Entities
         public string QuestionText { get; init; }
 
         public List<Answer>? Answers { get; }
-
+        
         /// <summary>
         /// Make a vote
         /// </summary>
